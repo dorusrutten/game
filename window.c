@@ -17,32 +17,34 @@ SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
  		
             if (IsWindowFullscreen())
             {
-                
+            if (IsKeyDown(KEY_F)){
             GetScreenWidth();
             GetScreenHeight();
                 // if we are full screen, then go back to the windowed size
                 SetWindowSize(screenWidth, screenHeight);
                 
                  // toggle the state
- 			ToggleFullscreen();
+ 			ToggleFullscreen();}
             }
             
         
  
            
     
-SetTargetFPS(144);    
+   
      Rectangle rec1 = {(float)screenWidth/3, (float)screenHeight/3,(float)40,(float)40};
      Rectangle rec2 = {(float)screenWidth/9, (float)screenHeight/9,(float)40,(float)40};
      Rectangle rec3 = {(float)screenWidth/13, (float)screenHeight/13,(float)40,(float)40};
+
+     SetTargetFPS(144);
     //--------------------------------------------------------------------------------------
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {     
 
-        if(rec1.x < 0){rec1.x = 0;}
-        if(rec1.x > GetScreenWidth()-rec1.width){rec1.x = GetScreenWidth()-rec1.width;}
-        if(rec1.y < 0){rec1.y = 0;}
-        if(rec1.y > GetScreenHeight()-rec1.height){rec1.y = GetScreenHeight()-rec1.height;}
+    if(rec1.x < 0){rec1.x = 0;}
+    if(rec1.x > GetScreenWidth()-rec1.width){rec1.x = GetScreenWidth()-rec1.width;}
+    if(rec1.y < 0){rec1.y = 0;}
+    if(rec1.y > GetScreenHeight()-rec1.height){rec1.y = GetScreenHeight()-rec1.height;}
          
         if(rec2.x < 0){rec2.x = 0;}
         if(rec2.x > GetScreenWidth()-rec2.width){rec2.x = GetScreenWidth()-rec2.width;}
